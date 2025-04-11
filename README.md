@@ -16,8 +16,8 @@ docker run challenge01
 
 ## 🔍 Endpoints
 
-### POST /login
-### GET /userdata/<user_id>
+- POST /login
+- GET /userdata/<user_id>
 
 
 ## 🎯 Objetivo del Desafío
