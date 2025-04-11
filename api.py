@@ -6,7 +6,7 @@ import datetime
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'mysecretkey')  # ahora configurable por variable de entorno
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'mysecretkey')
 
 # --- Base de datos SQLite ---
 def init_db():
@@ -29,7 +29,6 @@ def login():
 
     conn = sqlite3.connect('users.db')
     c = conn.cursor()
-    # vulnerable a SQL injection
     c.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'")
     user = c.fetchone()
     conn.close()
@@ -51,7 +50,6 @@ def get_user_data(user_id):
 
     try:
         decoded = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
-        # no se verifica que el user_id del token coincida con el del request (IDOR)
         conn = sqlite3.connect('users.db')
         c = conn.cursor()
         c.execute(f"SELECT id, username FROM users WHERE id = {user_id}")
