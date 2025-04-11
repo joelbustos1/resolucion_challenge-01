@@ -26,7 +26,7 @@ docker run challenge01
 2. Encontra vulnerabilidades de seguridad y explotalas
 3. Redacta un breve informe donde expliques:
 - Las vulnerabilidades encontradas
-- Cómo las explotaste
+- Cómo las explotastes
 - Qué impacto tienen
 - Cómo se pueden mitigar
 
