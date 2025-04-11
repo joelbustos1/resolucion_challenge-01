@@ -28,6 +28,6 @@ docker run challenge01
 - Las vulnerabilidades encontradas
 - Cómo las explotaste
 - Qué impacto tienen
-- Cómo se pueden mitiga
+- Cómo se pueden mitigar
 
 ¡Buena suerte!
