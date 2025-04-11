@@ -1,4 +1,4 @@
-# 🛡️ API Vulnerable - Challenge 01
+# 🛡️ API Vulnerable - Challenge01
 
 Este proyecto contiene una API simple en python, intencionalmente vulnerable, para utilizar con propositos educativos.
 
