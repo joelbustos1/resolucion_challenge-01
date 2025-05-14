@@ -56,4 +56,4 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 
 5. una vez hecho esto ya vamos a poder ir capturando el trafico de los endpoints dados pero antes revise el codigo fuente de la app y encontre a simple vista varias vulnerabilidades que a continuacion muestro:
 
-![Image](https://github.com/user-attachments/assets/ac486d76-27d5-4427-87fe-6f77ad74c224)
+![Image](https://github.com/user-attachments/assets/bc0e0037-b6b4-47da-a4b0-d227e27e64b9)
