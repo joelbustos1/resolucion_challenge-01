@@ -127,8 +127,8 @@ vemos de vuelta el codigo 200 seguido de la palabra OK, es decir, se genero con 
 3.facilita el acceso no autorizado, especialmente en entornos productivos mal configurados.
 
 ### Mitigacion:
-1. no incluir credenciales en el codigo fuente.
-2. configurar usuarios con permisos mínimos necesarios.
+1.no incluir credenciales en el codigo fuente.
+2.configurar usuarios con permisos mínimos necesarios.
 
 # Almacenamiento inseguro de contraseñas
 
