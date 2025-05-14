@@ -89,6 +89,6 @@ sigamos con la otra vulnerabilidad, el hardcodeo de las credenciales de usuario.
 
 con el token dado podemos ir al endpoint userdata/<user_id> con el metodo GET y pegar el token en el header authentication. (genere otro token porque el que se muestra en la captura habia vencido pero es para seguir con los pasos)
 
-![Image](https://github.com/user-attachments/assets/7ff5d1fb-fbec-4d95-b70e-1e3f7c30d115)
+![Image](https://github.com/user-attachments/assets/c0454a27-5fdd-43bc-8c00-4110d1014700)
 
 vemos de vuelta el codigo 200 seguido de la palabra OK, es decir, se genero con exito la peticion.
