@@ -88,7 +88,7 @@ probando token generado para hitear el endpoint userdata/<user_id>, para esto se
 se puede ver como se genera exitosamente el codigo 200 seguido de un OK, esto significa que la solicitud se realizo con exito.
 
 >[!WARNING]
->BROKEN ACCESS CONTROL
+>BROKEN ACCESS CONTROL. Vulnerabilidad incluida en el top 10 OWASP
 >
 la app permite acceder a datos de cualquier usuario modificando el parametro user_id en la URL, sin verificar que el usuario autenticado tenga permisos para ver esa informacion. Esto permite que un atacante autenticado pueda acceder a datos sensibles de otros usuarios.
 
