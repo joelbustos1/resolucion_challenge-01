@@ -44,7 +44,7 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
  
 4. una vez abierta la tool me dirigi a la pestaña de proxy y abri su navegador para empezar a capturar las peticiones de los endpoints, una vez abierto me dirigi a pegar la direccion dada anteriormente (http://127.0.0.1:5000).
    
-[!NOTE]
-interfaz de burpsuite
-
+>[!NOTE]
+>interfaz de burpsuite
+>
 ![Image](https://github.com/user-attachments/assets/afbbfa40-caf6-4a05-99a8-4449e93fcd33)
