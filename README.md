@@ -57,3 +57,13 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 5. una vez hecho esto ya vamos a poder ir capturando el trafico de los endpoints dados pero antes revise el codigo fuente de la app y encontre a simple vista varias vulnerabilidades que a continuacion muestro:
 
 ![Image](https://github.com/user-attachments/assets/bc0e0037-b6b4-47da-a4b0-d227e27e64b9)
+
+podemos ver como primero que nada que se usa una secret_key predecible ya que si no se establece la variable de entorno SECRET_KEY se va a usar por defecto 'mysecretkey', luego al definir la funcion init_db se estan hardcodeando credenciales de usuarios. 
+
+>[!WARNING]
+>explotando estas vulnerabilidades
+>
+
+hice un programa basico para poder generar un token valido sin necesidad de credenciales
+
+![Image](https://github.com/user-attachments/assets/3ef2832e-e346-434b-90b6-a5fe1f576338)
