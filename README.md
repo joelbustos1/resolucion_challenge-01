@@ -88,7 +88,7 @@ probando token generado para hitear el endpoint userdata/<user_id>, para esto se
 se puede ver como se genera exitosamente el codigo 200 seguido de un OK, esto significa que la solicitud se realizo con exito.
 
 >[!WARNING]
->BROKEN ACCESS CONTROL. Vulnerabilidad incluida en el top 10 OWASP
+>Control de acceso inseguro
 >
 la app permite acceder a datos de cualquier usuario modificando el parametro user_id en la URL, sin verificar que el usuario autenticado tenga permisos para ver esa informacion. Esto permite que un atacante autenticado pueda acceder a datos sensibles de otros usuarios.
 
@@ -168,7 +168,7 @@ pude hacer una inyeccion SQL de forma exitosa y generandome asi un token para po
 >
 1. la linea vulnerable permite al atacante manipular la consulta SQL e iniciar sesion sin credenciales validas.
 2. posibilidad de exfiltrar datos, modificar registros o ejecutar comandos destructivos en la base de datos.
-3. es una de las vulnerabilidades más graves y comunes. Parte del OWASP Top 10 Injection.
+3. es una de las vulnerabilidades más graves y comunes. 
 
 ### Mitigacion:
 1. usar consultas parametrizadas.
