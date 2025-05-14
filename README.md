@@ -53,3 +53,7 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 >Navegador
 >
 ![Image](https://github.com/user-attachments/assets/0ca22389-2b59-4d4a-8d65-20dc68f24504)
+
+5. una vez hecho esto ya vamos a poder ir capturando el trafico de los endpoints dados pero antes revise el codigo fuente de la app y encontre a simple vista varias vulnerabilidades que a continuacion muestro:
+
+![Image](https://github.com/user-attachments/assets/ac486d76-27d5-4427-87fe-6f77ad74c224)
