@@ -35,11 +35,16 @@ docker run challenge01
 ## Resolución
 logre identificar varias vulnerabilidades que comprometen la seguridad de la app pero primero que nada quiero ir mencionando el paso que fui haciendo:
 1. primero que anda tuve buildear y correr el challenge con los comandos dados en la consigna.
+   
 2. una vez con la imagen de docker corriendo y con la direccion dada prosegui con el otro paso.
    
 ![Image](https://github.com/user-attachments/assets/99507e5f-4e57-4457-a82f-726e37c44d04)
+
 3. para este ejercicio use la tool burpsuite que ayuda justamente en el analisis de la seguridad en una app web pudiendo hacer pequeños pentestings.
+ 
 4. una vez abierta la tool me dirigi a la pestaña de proxy y abri su navegador para empezar a capturar las peticiones de los endpoints, una vez abierto me dirigi a pegar la direccion dada anteriormente (http://127.0.0.1:5000).
+   
 [!NOTE]
 interfaz de burpsuite
+
 ![Image](https://github.com/user-attachments/assets/afbbfa40-caf6-4a05-99a8-4449e93fcd33)
