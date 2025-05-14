@@ -87,6 +87,11 @@ probando token generado para hitear el endpoint userdata/<user_id>, para esto se
 
 se puede ver como se genera exitosamente el codigo 200 seguido de un OK, esto significa que la solicitud se realizo con exito.
 
+>[!WARNING]
+>BROKEN ACCESS CONTROL
+>
+la app permite acceder a datos de cualquier usuario modificando el parametro user_id en la URL, sin verificar que el usuario autenticado tenga permisos para ver esa informacion. Esto permite que un atacante autenticado pueda acceder a datos sensibles de otros usuarios.
+
 # Credenciales hardcodeadas en el codigo fuente
 
 sigamos con la otra vulnerabilidad, podemos ver que al definir la funcion init_db se estan hardcodeando credenciales de usuarios. Podemos usar esas credenciales en el metodo POST del endpoint login para que asi nos genere una token valido para una autenticacion, es importante usar el content-type con el valor application/json ya que es lo que espera el endpoint login, debajo generamos el objeto con las credenciales que tenemos en el codigo.
@@ -99,10 +104,16 @@ con el token dado podemos ir al endpoint userdata/<user_id> con el metodo GET y 
 
 vemos de vuelta el codigo 200 seguido de la palabra OK, es decir, se genero con exito la peticion.
 
-# Almacenamiento inseguro de contraseñas e Inyeccion SQL
+# Almacenamiento inseguro de contraseñas
+
+podemos ver como esta linea de codigo contiene la contraseña en texto plano: c.execute("INSERT OR IGNORE INTO users VALUES (1, 'admin', 'admin123')")
+y luego tambien lo vemos en la consulta: c.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'")
+si las contraseñas estan en texto plano facilita ataques como el uso directo de las credenciales y permite su explotacion sin necesidad de brute force. Esta vulnerabilidad fue explotada en pasos anteriores.
+
+# Inyeccion SQL
 
 en la seccion del login podemos ver la siguiente linea: c.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'")
-vemos como las contraseñas son almacenadas en texto plano y una consulta SQL construida de forma insegura.
+vemos una consulta SQL construida de forma insegura (inputs no validados/sanitizados).
 me guie usando la siguiente pagina para poder explotar la vulnerabilidad: https://portswigger.net/web-security/sql-injection
 una vez leida la pagina di con la siguiente consulta:
 
