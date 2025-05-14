@@ -67,7 +67,7 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 
 ![Image](https://github.com/user-attachments/assets/bc0e0037-b6b4-47da-a4b0-d227e27e64b9)
 
-![Image](https://github.com/user-attachments/assets/73b06589-36cb-4f62-9a77-aa13a058d779)
+![Image](https://github.com/user-attachments/assets/8267570c-2d72-40f9-bad3-5e80c77d3efd)
 
 >[!WARNING]
 >explotando vulnerabilidades reconocidas en el codigo
