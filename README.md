@@ -54,7 +54,16 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 >
 ![Image](https://github.com/user-attachments/assets/0ca22389-2b59-4d4a-8d65-20dc68f24504)
 
-5. una vez hecho esto ya vamos a poder ir capturando el trafico de los endpoints dados pero antes revise el codigo fuente de la app y encontre a simple vista varias vulnerabilidades que a continuacion muestro:
+5. una vez hecho esto ya vamos a poder ir capturando el trafico de los endpoints dados e ir viendo el http history con las peticiones realizadas, una vez hago esto selecciono el endpoint al cual quiero pegarlo y lo mando al repeater de burpsuite, pero antes revise el codigo fuente de la app y encontre a simple vista varias vulnerabilidades que a continuacion muestro:
+
+>[!NOTE]
+>HTTP history, click derecho en la request deseada y la mandamos al repeater. Luego retomo con esto
+>
+
+![Image](https://github.com/user-attachments/assets/4c74e609-087f-4b8a-bc88-cbb41e5e848e)
+
+>[!NOTE]
+>fragmento del codigo de la app
 
 ![Image](https://github.com/user-attachments/assets/bc0e0037-b6b4-47da-a4b0-d227e27e64b9)
 
@@ -64,6 +73,12 @@ podemos ver como primero que nada que se usa una secret_key predecible ya que si
 >explotando estas vulnerabilidades
 >
 
-hice un programa basico para poder generar un token valido sin necesidad de credenciales
+hice un programa basico para poder generar un token valido sin necesidad de credenciales.
 
 ![Image](https://github.com/user-attachments/assets/3ef2832e-e346-434b-90b6-a5fe1f576338)
+
+probando token generado para hitear el endpoint userdata/<user_id>, para esto se usa el repeater y usamos el header authorization donde ahi vamos a darle el valor del token generado con el programa.
+
+![Image](https://github.com/user-attachments/assets/ff438a43-fcb8-4495-9555-cda0c6c79b6c)
+
+se puede ver como se genera exitosamente el codigo 200 seguido de un OK, esto significa que la solicitud se realizo con exito.
