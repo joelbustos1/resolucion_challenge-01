@@ -33,7 +33,7 @@ docker run challenge01
 ¡Buena suerte!
 
 ## Resolución
-logre identificar varias vulnerabilidades que comprometen la seguridad de la app pero primero que nada quiero ir mencionando el paso a paso que fui haciendo:
+logre identificar varias vulnerabilidades que comprometen la seguridad de la app pero quiero ir mencionando el paso a paso que fui haciendo:
 1. primero que nada tuve que buildear y correr el challenge con los comandos dados en la consigna.
    
 2. una vez con la imagen de docker corriendo y con la direccion dada prosegui con el otro paso.
@@ -54,7 +54,7 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 >
 ![Image](https://github.com/user-attachments/assets/0ca22389-2b59-4d4a-8d65-20dc68f24504)
 
-5. una vez hecho esto ya vamos a poder ir capturando el trafico de los endpoints dados e ir viendo el http history con las peticiones realizadas, una vez hago esto selecciono el endpoint al cual quiero pegarlo y lo mando al repeater de burpsuite, pero antes revise el codigo fuente de la app y encontre a simple vista varias vulnerabilidades que a continuacion muestro:
+5. una vez hecho esto ya voy a poder ir capturando el trafico de los endpoints dados e ir viendo el http history con las peticiones realizadas, una vez hago esto selecciono el endpoint al cual quiero pegarlo y lo mando al repeater de burpsuite, pero antes revise el codigo fuente de la app y encontre a simple vista varias vulnerabilidades que a continuacion muestro:
 
 >[!NOTE]
 >HTTP history, click derecho en la request deseada y la mandamos al repeater. Luego retomo con esto
@@ -75,13 +75,13 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 
 # Uso de SECRET_KEY Debil o predecible
 
-podemos ver como primero que nada que se usa una secret_key predecible ya que si no se establece la variable de entorno SECRET_KEY se va a usar por defecto 'mysecretkey'.
+se puede ver como primero que nada se usa una secret_key predecible ya que si no se establece la variable de entorno SECRET_KEY se va a usar por defecto 'mysecretkey'.
 
 hice un programa basico para poder generar un token valido sin necesidad de credenciales.
 
 ![Image](https://github.com/user-attachments/assets/3ef2832e-e346-434b-90b6-a5fe1f576338)
 
-probando token generado para hitear el endpoint userdata/<user_id>, para esto se usa el repeater y usamos el header authorization donde ahi vamos a darle el valor del token generado con el programa.
+probando token generado para hitear el endpoint userdata/<user_id>, para esto se usa el repeater y uso el header authorization donde ahi voy a darle el valor del token generado con el programa.
 
 ![Image](https://github.com/user-attachments/assets/ff438a43-fcb8-4495-9555-cda0c6c79b6c)
 
@@ -109,11 +109,11 @@ la app permite acceder a datos de cualquier usuario modificando el parametro use
 
 # Credenciales hardcodeadas en el codigo fuente
 
-sigamos con la otra vulnerabilidad, podemos ver que al definir la funcion init_db se estan hardcodeando credenciales de usuarios. Podemos usar esas credenciales en el metodo POST del endpoint login para que asi nos genere una token valido para una autenticacion, es importante usar el content-type con el valor application/json ya que es lo que espera el endpoint login, debajo generamos el objeto con las credenciales que tenemos en el codigo.
+sigamos con la otra vulnerabilidad, podemos ver que al definir la funcion init_db se estan hardcodeando credenciales de usuarios. Se pueden usar esas credenciales en el metodo POST del endpoint login para que asi nos genere una token valido para una autenticacion, es importante usar el content-type con el valor application/json ya que es lo que espera el endpoint login, debajo generamos el objeto con las credenciales que tenemos en el codigo.
 
 ![Image](https://github.com/user-attachments/assets/c28a3048-6c97-4187-b47a-8482d60909bf)
 
-con el token dado podemos ir al endpoint userdata/<user_id> con el metodo GET y pegar el token en el header authentication. (genere otro token porque el que se muestra en la captura habia vencido pero es para seguir con los pasos)
+con el token dado se puede ir al endpoint userdata/<user_id> con el metodo GET y pegar el token en el header authentication. (genere otro token porque el que se muestra en la captura habia vencido pero es para seguir con los pasos)
 
 ![Image](https://github.com/user-attachments/assets/c0454a27-5fdd-43bc-8c00-4110d1014700)
 
@@ -150,7 +150,7 @@ si las contraseñas estan en texto plano facilita ataques como el uso directo de
 
 # Inyeccion SQL
 
-en la seccion del login podemos ver la siguiente linea: c.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'")
+en la seccion del login se puede ver la siguiente linea: c.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'")
 vemos una consulta SQL construida de forma insegura (inputs no validados/sanitizados).
 me guie usando la siguiente pagina para poder explotar la vulnerabilidad: https://portswigger.net/web-security/sql-injection
 una vez leida la pagina di con la siguiente consulta:
