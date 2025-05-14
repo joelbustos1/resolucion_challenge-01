@@ -98,3 +98,18 @@ con el token dado podemos ir al endpoint userdata/<user_id> con el metodo GET y 
 ![Image](https://github.com/user-attachments/assets/c0454a27-5fdd-43bc-8c00-4110d1014700)
 
 vemos de vuelta el codigo 200 seguido de la palabra OK, es decir, se genero con exito la peticion.
+
+# Almacenamiento inseguro de contraseñas e Inyeccion SQL
+
+en la seccion del login podemos ver la siguiente linea: c.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'")
+vemos como las contraseñas son almacenadas en texto plano y una consulta SQL construida de forma insegura.
+me guie usando la siguiente pagina para poder explotar la vulnerabilidad: https://portswigger.net/web-security/sql-injection
+una vez leida la pagina di con la siguiente consulta:
+
+![Image](https://github.com/user-attachments/assets/af88e26e-5e99-4468-829b-43aa933d35ca)
+
+en base a esta informacion y a conocer ya el username de los usuarios (admin en especifico) hice el siguiente payload en burpsuite:
+
+![Image](https://github.com/user-attachments/assets/510bf445-e1de-49f7-903a-966a343b56d9)
+
+pude hacer una inyeccion SQL de forma exitosa y generandome asi un token para poder luego autenticarme.
