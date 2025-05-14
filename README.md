@@ -67,13 +67,13 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 
 ![Image](https://github.com/user-attachments/assets/bc0e0037-b6b4-47da-a4b0-d227e27e64b9)
 
+>[!WARNING]
+>explotando vulnerabilidades reconocidas en el codigo
+>
+
 # Uso de SECRET_KEY Debil o predecible
 
 podemos ver como primero que nada que se usa una secret_key predecible ya que si no se establece la variable de entorno SECRET_KEY se va a usar por defecto 'mysecretkey'.
-
->[!WARNING]
->explotando estas vulnerabilidades
->
 
 hice un programa basico para poder generar un token valido sin necesidad de credenciales.
 
