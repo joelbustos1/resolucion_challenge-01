@@ -86,3 +86,9 @@ se puede ver como se genera exitosamente el codigo 200 seguido de un OK, esto si
 sigamos con la otra vulnerabilidad, el hardcodeo de las credenciales de usuario. Podemos usar esas credenciales en el metodo POST del endpoint login para que asi nos genere una token valido para una autenticacion, es importante usar el content-type con el valor application/json ya que es lo que espera el endpoint login, debajo generamos el objeto con las credenciales que tenemos en el codigo.
 
 ![Image](https://github.com/user-attachments/assets/c28a3048-6c97-4187-b47a-8482d60909bf)
+
+con el token dado podemos ir al endpoint userdata/<user_id> con el metodo GET y pegar el token en el header authentication. (genere otro token porque el que se muestra en la captura habia vencido pero es para seguir con los pasos)
+
+![Image](https://github.com/user-attachments/assets/7ff5d1fb-fbec-4d95-b70e-1e3f7c30d115)
+
+vemos de vuelta el codigo 200 seguido de la palabra OK, es decir, se genero con exito la peticion.
