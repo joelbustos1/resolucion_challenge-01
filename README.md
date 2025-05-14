@@ -82,3 +82,7 @@ probando token generado para hitear el endpoint userdata/<user_id>, para esto se
 ![Image](https://github.com/user-attachments/assets/ff438a43-fcb8-4495-9555-cda0c6c79b6c)
 
 se puede ver como se genera exitosamente el codigo 200 seguido de un OK, esto significa que la solicitud se realizo con exito.
+
+sigamos con la otra vulnerabilidad, el hardcodeo de las credenciales de usuario. Podemos usar esas credenciales en el metodo POST del endpoint login para que asi nos genere una token valido para una autenticacion, es importante usar el content-type con el valor application/json ya que es lo que espera el endpoint login, debajo generamos el objeto con las credenciales que tenemos en el codigo.
+
+![Image](https://github.com/user-attachments/assets/c28a3048-6c97-4187-b47a-8482d60909bf)
