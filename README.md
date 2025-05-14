@@ -31,3 +31,9 @@ docker run challenge01
 - Cómo se pueden mitigar
 
 ¡Buena suerte!
+
+## Resolución
+logre identificar varias vulnerabilidades que comprometen la seguridad de la app pero primero que nada quiero ir mencionando el paso que fui haciendo:
+1. primero que anda tuve buildear y correr el challenge con los comandos dados en la consigna.
+2. una vez con la imagen de docker corriendo y con la direccion dada prosegui con el otro paso.
+![Image](https://github.com/user-attachments/assets/99507e5f-4e57-4457-a82f-726e37c44d04)
