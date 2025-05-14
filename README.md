@@ -33,7 +33,7 @@ docker run challenge01
 ¡Buena suerte!
 
 ## Resolución
-logre identificar varias vulnerabilidades que comprometen la seguridad de la app pero primero que nada quiero ir mencionando el paso que fui haciendo:
+logre identificar varias vulnerabilidades que comprometen la seguridad de la app pero primero que nada quiero ir mencionando el paso a paso que fui haciendo:
 1. primero que anda tuve buildear y correr el challenge con los comandos dados en la consigna.
    
 2. una vez con la imagen de docker corriendo y con la direccion dada prosegui con el otro paso.
@@ -48,3 +48,8 @@ logre identificar varias vulnerabilidades que comprometen la seguridad de la app
 >interfaz de burpsuite
 >
 ![Image](https://github.com/user-attachments/assets/afbbfa40-caf6-4a05-99a8-4449e93fcd33)
+
+>[!NOTE]
+>Navegador
+>
+![Image](https://github.com/user-attachments/assets/0ca22389-2b59-4d4a-8d65-20dc68f24504)
