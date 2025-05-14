@@ -122,13 +122,14 @@ vemos de vuelta el codigo 200 seguido de la palabra OK, es decir, se genero con 
 >[!CAUTION]
 >IMPACTO
 >
-1.al inicializar la base de datos (init_db()), se insertan usuarios con credenciales expuestas directamente en el código (admin:admin123).
-2.estas credenciales se pueden usar para iniciar sesión de forma inmediata si el atacante tiene acceso al código.
-3.facilita el acceso no autorizado, especialmente en entornos productivos mal configurados.
+
+1. al inicializar la base de datos (init_db()), se insertan usuarios con credenciales expuestas directamente en el código (admin:admin123).
+2. estas credenciales se pueden usar para iniciar sesión de forma inmediata si el atacante tiene acceso al código.
+3. facilita el acceso no autorizado, especialmente en entornos productivos mal configurados.
 
 ### Mitigacion:
-1.no incluir credenciales en el codigo fuente.
-2.configurar usuarios con permisos mínimos necesarios.
+1. no incluir credenciales en el codigo fuente.
+2. configurar usuarios con permisos mínimos necesarios.
 
 # Almacenamiento inseguro de contraseñas
 
@@ -139,13 +140,13 @@ si las contraseñas estan en texto plano facilita ataques como el uso directo de
 >[!CAUTION]
 >IMPACTO
 >
-1.las contraseñas estan guardadas en texto plano dentro de la base de datos y en el codigo.
-2.si un atacante accede a la base de datos puede ver directamente todas las contraseñas.
-3.permite reutilizacion de contraseñas en otros sitios si los usuarios repiten credenciales.
+1. las contraseñas estan guardadas en texto plano dentro de la base de datos y en el codigo.
+2. si un atacante accede a la base de datos puede ver directamente todas las contraseñas.
+3. permite reutilizacion de contraseñas en otros sitios si los usuarios repiten credenciales.
 
 ### Mitigacion:
-1.cifrar contraseñas utilizando algoritmos como bcrypt, scrypt o argon2.
-2.nunca almacenar contraseñas sin cifrado.
+1. cifrar contraseñas utilizando algoritmos como bcrypt, scrypt o argon2.
+2. nunca almacenar contraseñas sin cifrado.
 
 # Inyeccion SQL
 
@@ -165,11 +166,11 @@ pude hacer una inyeccion SQL de forma exitosa y generandome asi un token para po
 >[!CAUTION]
 >IMPACTO
 >
-1.la linea vulnerable permite al atacante manipular la consulta SQL e iniciar sesion sin credenciales validas.
-2.posibilidad de exfiltrar datos, modificar registros o ejecutar comandos destructivos en la base de datos.
-3.es una de las vulnerabilidades más graves y comunes. Parte del OWASP Top 10 Injection.
+1. la linea vulnerable permite al atacante manipular la consulta SQL e iniciar sesion sin credenciales validas.
+2. posibilidad de exfiltrar datos, modificar registros o ejecutar comandos destructivos en la base de datos.
+3. es una de las vulnerabilidades más graves y comunes. Parte del OWASP Top 10 Injection.
 
 ### Mitigacion:
-1.usar consultas parametrizadas.
-2.validar y sanitizar los datos de entrada.
-3.restingir los permisos de la base de datos al minimo privilegio.
+1. usar consultas parametrizadas.
+2. validar y sanitizar los datos de entrada.
+3. restingir los permisos de la base de datos al minimo privilegio.
