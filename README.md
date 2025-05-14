@@ -34,7 +34,7 @@ docker run challenge01
 
 ## Resolución
 logre identificar varias vulnerabilidades que comprometen la seguridad de la app pero primero que nada quiero ir mencionando el paso a paso que fui haciendo:
-1. primero que anda tuve buildear y correr el challenge con los comandos dados en la consigna.
+1. primero que nada tuve buildear y correr el challenge con los comandos dados en la consigna.
    
 2. una vez con la imagen de docker corriendo y con la direccion dada prosegui con el otro paso.
    
